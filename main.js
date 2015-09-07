@@ -19,16 +19,20 @@ log(process.versions);
 
 
 // log( "ok" );
-
+log('>>>1');
 var app = require('app');  // Module to control application life.
+log('>>>2');
 var BrowserWindow = require('browser-window');  // Module to create native browser window.
+log('>>>3');
 
 // Report crashes to our server.
-require('crash-reporter').start();
+// require('crash-reporter').start();
+log('>>>4');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is GCed.
 var mainWindow = null;
+log('>>>5');
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function() {
@@ -39,9 +43,11 @@ app.on('window-all-closed', function() {
   }
 });
 
+log('>>>6');
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 app.on('ready', function() {
+  log('>>>7');
   // Create the browser window.
   mainWindow = new BrowserWindow({width: 800, height: 600});
 
@@ -60,6 +66,7 @@ app.on('ready', function() {
   });
 });
 
+log('>>>8');
 
 
 
